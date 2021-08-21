@@ -98,7 +98,7 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
         OFF
     }
 
-    private int flashStatus = USE_FLASH.OFF.ordinal();
+    private int flashStatus = USE_FLASH.ON.ordinal(); // USE_FLASH.OFF .ordinal(); changed to USE_FLASH.ON.ordinal(); 21082021
 
     /**
      * Initializes the UI and creates the detector pipeline.
@@ -133,7 +133,7 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
 
         // read parameters from the intent used to launch the activity.
         boolean autoFocus = true;
-        boolean useFlash = false;
+        boolean useFlash = true; // boolean useFlash = false; changed to boolean useFlash = true;  on 21082021
 
         // Check for the camera permission before accessing the camera.  If the
         // permission is not granted yet, request permission.
@@ -306,7 +306,7 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
         if (grantResults.length != 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             // we have permission, so create the camerasource
             boolean autoFocus = true;
-            boolean useFlash = false;
+            boolean useFlash = true; // boolean useFlash = false; changed to boolean useFlash = true;  on 21082021
             createCameraSource(autoFocus, useFlash, CameraSource.CAMERA_FACING_BACK);
             return;
         }
